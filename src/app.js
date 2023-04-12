@@ -1,6 +1,10 @@
 import express from 'express'
 import cors from 'cors';
 import routes from './routes'
+
+//routes
+import userRoutes from '../src/routers/UserRoutes'
+
 import "./database/indexDt"
 class App{
     constructor(){
@@ -14,7 +18,8 @@ class App{
     }
     
     routes(){
-     this.server.use(routes);
+        this.server.use(userRoutes)
+     //this.server.use(routes);
     }
 }
 
